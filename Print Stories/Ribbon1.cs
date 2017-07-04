@@ -10,6 +10,9 @@ namespace Print_Stories
 {
     public partial class Ribbon1
     {
+        private string rallyUrl = "";
+        private bool authenticated = false;
+
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
 
@@ -17,14 +20,20 @@ namespace Print_Stories
 
         private void ConnectRally(object sender, RibbonControlEventArgs e)
         {
-            RallyRestApi restApi = new RallyRestApi();
-            String url = "";
+            //RallyRestApi restApi = new RallyRestApi();
 
             frmAuth frm = new frmAuth();
-            frm.SSO_URL = url;
+            frm.SSO_URL = rallyUrl;
             frm.ShowDialog();
 
-            MessageBox.Show("hello");
+        }
+
+        private void btnSettings_Click(object sender, RibbonControlEventArgs e)
+        {
+            String url = Properties.Settings.Default.Rally_SSO_URL;
+
+            frmSettings setting = new frmSettings();
+
         }
     }
 }
