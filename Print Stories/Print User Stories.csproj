@@ -24,8 +24,8 @@
     <ProjectGuid>{7B5A41CE-A78F-43C1-AFBC-47DF2E068D80}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <RootNamespace>Print_Stories</RootNamespace>
-    <AssemblyName>Print User Stories</AssemblyName>
+    <RootNamespace>PrintUserStories</RootNamespace>
+    <AssemblyName>Print.User.Stories</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -124,9 +124,6 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="Rally.RestApi, Version=3.2.1.0, Culture=neutral, PublicKeyToken=09c9d263d3ce713f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Rally.RestApi.3.2.1\lib\net45\Rally.RestApi.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -172,27 +169,9 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="frmAuth.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAuth.Designer.cs">
-      <DependentUpon>frmAuth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSettings.Designer.cs">
-      <DependentUpon>frmSettings.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <EmbeddedResource Include="frmAuth.resx">
-      <DependentUpon>frmAuth.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSettings.resx">
-      <DependentUpon>frmSettings.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -206,7 +185,6 @@
       <DependentUpon>Ribbon1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="Print Stories_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -226,7 +204,6 @@
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="RallyRestAPI.NET.shfbproj" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
     </None>
@@ -234,6 +211,16 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\RallyAuthenticator\RallyAuthenticator\RallyAuthenticator.csproj">
+      <Project>{a4a9d956-788c-4d6c-a433-231b0f9ed1fd}</Project>
+      <Name>RallyAuthenticator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RallyRestApi\RallyRestApi\RallyRestApi.csproj">
+      <Project>{bcc72c46-48e4-40b4-8db8-42cf9cf2f81b}</Project>
+      <Name>RallyRestApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

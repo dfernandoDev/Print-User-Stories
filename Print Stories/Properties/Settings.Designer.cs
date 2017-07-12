@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Print_Stories.Properties {
+namespace PrintUserStories.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,7 +25,7 @@ namespace Print_Stories.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Test")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Rally_SSO_URL {
             get {
                 return ((string)(this["Rally_SSO_URL"]));

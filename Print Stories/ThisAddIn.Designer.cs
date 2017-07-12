@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 #pragma warning disable 414
-namespace Print_Stories {
+namespace PrintUserStories {
     
     
     /// 

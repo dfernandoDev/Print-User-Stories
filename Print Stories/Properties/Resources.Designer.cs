@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Print_Stories.Properties {
+namespace PrintUserStories.Properties {
     
     
     /// <summary>

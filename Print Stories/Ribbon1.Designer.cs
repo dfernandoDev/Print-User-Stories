@@ -1,4 +1,4 @@
-﻿namespace Print_Stories
+﻿namespace PrintUserStories
 {
     partial class Ribbon1 : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
@@ -38,13 +38,19 @@
             this.grpConfiguration = this.Factory.CreateRibbonGroup();
             this.btnRally = this.Factory.CreateRibbonButton();
             this.btnSettings = this.Factory.CreateRibbonButton();
+            this.group1 = this.Factory.CreateRibbonGroup();
+            this.editBoxWorkspace = this.Factory.CreateRibbonEditBox();
+            this.editBoxProject = this.Factory.CreateRibbonEditBox();
+            this.btnSelectWrkspProj = this.Factory.CreateRibbonButton();
             this.tabPrintStories.SuspendLayout();
             this.grpConfiguration.SuspendLayout();
+            this.group1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPrintStories
             // 
             this.tabPrintStories.Groups.Add(this.grpConfiguration);
+            this.tabPrintStories.Groups.Add(this.group1);
             this.tabPrintStories.Label = "Print Stories";
             this.tabPrintStories.Name = "tabPrintStories";
             // 
@@ -67,6 +73,36 @@
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnSettings_Click);
             // 
+            // group1
+            // 
+            this.group1.Items.Add(this.editBoxWorkspace);
+            this.group1.Items.Add(this.editBoxProject);
+            this.group1.Items.Add(this.btnSelectWrkspProj);
+            this.group1.Label = "Scope Selection";
+            this.group1.Name = "group1";
+            // 
+            // editBoxWorkspace
+            // 
+            this.editBoxWorkspace.Enabled = false;
+            this.editBoxWorkspace.Label = "Workspace";
+            this.editBoxWorkspace.Name = "editBoxWorkspace";
+            this.editBoxWorkspace.SizeString = "123456789012345678901234567890";
+            this.editBoxWorkspace.Text = null;
+            // 
+            // editBoxProject
+            // 
+            this.editBoxProject.Enabled = false;
+            this.editBoxProject.Label = " Project";
+            this.editBoxProject.Name = "editBoxProject";
+            this.editBoxProject.SizeString = "123456789012345678901234567890";
+            this.editBoxProject.Text = null;
+            // 
+            // btnSelectWrkspProj
+            // 
+            this.btnSelectWrkspProj.Enabled = false;
+            this.btnSelectWrkspProj.Label = "Select Workspace and Project";
+            this.btnSelectWrkspProj.Name = "btnSelectWrkspProj";
+            // 
             // Ribbon1
             // 
             this.Name = "Ribbon1";
@@ -77,6 +113,8 @@
             this.tabPrintStories.PerformLayout();
             this.grpConfiguration.ResumeLayout(false);
             this.grpConfiguration.PerformLayout();
+            this.group1.ResumeLayout(false);
+            this.group1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -87,6 +125,10 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpConfiguration;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnRally;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSettings;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editBoxWorkspace;
+        internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editBoxProject;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSelectWrkspProj;
     }
 
     partial class ThisRibbonCollection
