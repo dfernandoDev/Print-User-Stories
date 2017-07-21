@@ -169,6 +169,8 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="PowerPointUtilities.cs" />
+    <Compile Include="PrintUserStoriesConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -213,10 +215,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\RallyAuthenticator\RallyAuthenticator\RallyAuthenticator.csproj">
-      <Project>{a4a9d956-788c-4d6c-a433-231b0f9ed1fd}</Project>
-      <Name>RallyAuthenticator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\RallyRestApi\RallyRestApi\RallyRestApi.csproj">
       <Project>{bcc72c46-48e4-40b4-8db8-42cf9cf2f81b}</Project>
       <Name>RallyRestApi</Name>

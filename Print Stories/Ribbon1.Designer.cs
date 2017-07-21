@@ -38,19 +38,25 @@
             this.grpConfiguration = this.Factory.CreateRibbonGroup();
             this.btnRally = this.Factory.CreateRibbonButton();
             this.btnSettings = this.Factory.CreateRibbonButton();
-            this.group1 = this.Factory.CreateRibbonGroup();
+            this.groupScope = this.Factory.CreateRibbonGroup();
             this.editBoxWorkspace = this.Factory.CreateRibbonEditBox();
             this.editBoxProject = this.Factory.CreateRibbonEditBox();
             this.btnSelectWrkspProj = this.Factory.CreateRibbonButton();
+            this.groupStoryCategory = this.Factory.CreateRibbonGroup();
+            this.btnIteration = this.Factory.CreateRibbonButton();
+            this.btnRelease = this.Factory.CreateRibbonButton();
+            this.btnBacklog = this.Factory.CreateRibbonButton();
             this.tabPrintStories.SuspendLayout();
             this.grpConfiguration.SuspendLayout();
-            this.group1.SuspendLayout();
+            this.groupScope.SuspendLayout();
+            this.groupStoryCategory.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPrintStories
             // 
             this.tabPrintStories.Groups.Add(this.grpConfiguration);
-            this.tabPrintStories.Groups.Add(this.group1);
+            this.tabPrintStories.Groups.Add(this.groupScope);
+            this.tabPrintStories.Groups.Add(this.groupStoryCategory);
             this.tabPrintStories.Label = "Print Stories";
             this.tabPrintStories.Name = "tabPrintStories";
             // 
@@ -73,13 +79,13 @@
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnSettings_Click);
             // 
-            // group1
+            // groupScope
             // 
-            this.group1.Items.Add(this.editBoxWorkspace);
-            this.group1.Items.Add(this.editBoxProject);
-            this.group1.Items.Add(this.btnSelectWrkspProj);
-            this.group1.Label = "Scope Selection";
-            this.group1.Name = "group1";
+            this.groupScope.Items.Add(this.editBoxWorkspace);
+            this.groupScope.Items.Add(this.editBoxProject);
+            this.groupScope.Items.Add(this.btnSelectWrkspProj);
+            this.groupScope.Label = "Scope Selection";
+            this.groupScope.Name = "groupScope";
             // 
             // editBoxWorkspace
             // 
@@ -102,6 +108,41 @@
             this.btnSelectWrkspProj.Enabled = false;
             this.btnSelectWrkspProj.Label = "Select Workspace and Project";
             this.btnSelectWrkspProj.Name = "btnSelectWrkspProj";
+            this.btnSelectWrkspProj.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnSelectWrkspProj_Click);
+            // 
+            // groupStoryCategory
+            // 
+            this.groupStoryCategory.Items.Add(this.btnIteration);
+            this.groupStoryCategory.Items.Add(this.btnRelease);
+            this.groupStoryCategory.Items.Add(this.btnBacklog);
+            this.groupStoryCategory.Label = "Story Category";
+            this.groupStoryCategory.Name = "groupStoryCategory";
+            // 
+            // btnIteration
+            // 
+            this.btnIteration.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.btnIteration.Enabled = false;
+            this.btnIteration.Label = "Iteration Stories";
+            this.btnIteration.Name = "btnIteration";
+            this.btnIteration.ShowImage = true;
+            this.btnIteration.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnIteration_Click);
+            // 
+            // btnRelease
+            // 
+            this.btnRelease.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.btnRelease.Enabled = false;
+            this.btnRelease.Label = "Release Stories";
+            this.btnRelease.Name = "btnRelease";
+            this.btnRelease.ShowImage = true;
+            this.btnRelease.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnRelease_Click);
+            // 
+            // btnBacklog
+            // 
+            this.btnBacklog.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.btnBacklog.Label = "Backlog Stories";
+            this.btnBacklog.Name = "btnBacklog";
+            this.btnBacklog.ShowImage = true;
+            this.btnBacklog.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnBacklog_Click);
             // 
             // Ribbon1
             // 
@@ -113,8 +154,10 @@
             this.tabPrintStories.PerformLayout();
             this.grpConfiguration.ResumeLayout(false);
             this.grpConfiguration.PerformLayout();
-            this.group1.ResumeLayout(false);
-            this.group1.PerformLayout();
+            this.groupScope.ResumeLayout(false);
+            this.groupScope.PerformLayout();
+            this.groupStoryCategory.ResumeLayout(false);
+            this.groupStoryCategory.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -125,10 +168,14 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpConfiguration;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnRally;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSettings;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupScope;
         internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editBoxWorkspace;
         internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editBoxProject;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSelectWrkspProj;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupStoryCategory;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnIteration;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnRelease;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnBacklog;
     }
 
     partial class ThisRibbonCollection
